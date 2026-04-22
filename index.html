@@ -3,141 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Truong | Portfolio</title>
+    <title>Anthony Truong | Trainer Card</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --sky-blue: #87CEEB;
-            --grass-green: #4CBB17;
-            --dirt-brown: #5C3A21;
-            --wood-dark: #3e2723;
-            --wood-light: #6d4c41;
-            --ui-blue: rgba(43, 60, 115, 0.85); /* Terraria menu color */
-            --ui-border: #d4af37; /* Gold border for UI */
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, var(--sky-blue) 0%, var(--sky-blue) 60%, var(--grass-green) 60%, var(--grass-green) 63%, var(--dirt-brown) 63%, var(--dirt-brown) 100%);
-            background-attachment: fixed;
-            font-family: 'VT323', monospace;
-            color: white;
-            line-height: 1.4;
-        }
-
-        /* Container designed to look like the in-game UI menus */
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background-color: var(--ui-blue);
-            border: 4px solid var(--ui-border);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.5), 5px 5px 15px rgba(0,0,0,0.5);
-            image-rendering: pixelated;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Press Start 2P', cursive;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 0 #000;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            color: #ffd700;
-            margin-bottom: 5px;
-            line-height: 1.5;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-size: 22px;
-            margin-bottom: 30px;
-            color: #b0c4de;
-            text-shadow: 1px 1px 0 #000;
-        }
-
-        h2 {
-            font-size: 16px;
-            border-bottom: 4px solid var(--ui-border);
-            padding-bottom: 5px;
-            margin-top: 30px;
-            color: #a4c8e1;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-size: 22px;
-            font-weight: bold;
-            color: #fff;
-            text-shadow: 1px 1px 0 #000;
-        }
-
-        .item-sub {
-            font-size: 18px;
-            color: #b0c4de;
-            font-style: italic;
-            margin-top: 2px;
-        }
-
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-            font-size: 20px;
-            text-shadow: 1px 1px 0 #000;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Styling for the skills section to look like inventory slots */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .skill-badge {
-            background-color: var(--wood-dark);
-            border: 2px solid var(--wood-light);
-            padding: 8px 12px;
-            font-size: 18px;
-            text-shadow: 1px 1px 0 #000;
-            box-shadow: inset -2px -2px 0 rgba(0,0,0,0.5), inset 2px 2px 0 rgba(255,255,255,0.2);
-        }
-
-        a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Anthony Truong</h1>
-        <div class="subtitle">Computer Science & IT Infrastructure</div>
+    <div class="dialog-box">
+        <h1>Trainer Card</h1>
+        <div class="trainer-info">
+            <span><strong>Name:</strong> Anthony Truong</span>
+            <span><strong>Class:</strong> IT & CS</span>
+        </div>
+        <div class="trainer-info">
+            <span><strong>Base:</strong> Boston, MA</span>
+            <span><strong>Level:</strong> Junior</span>
+        </div>
+    </div>
 
-        <h2>Character Stats (Education)</h2>
+    <div class="dialog-box">
+        <h2>▶ Education Stats</h2>
         <div class="item">
             <div class="item-header">
                 <span>Boston University</span>
-                <span>Graduating: Dec 2027</span>
+                <span>Exp. Dec 2027</span>
             </div>
             <div class="item-sub">B.S. in Computer Science</div>
             <ul>
@@ -145,8 +35,11 @@
                 <li>Dean's List</li>
             </ul>
         </div>
+    </div>
 
-        <h2>Quest Log (Experience)</h2>
+    <div class="dialog-box">
+        <h2>▶ Battle Experience</h2>
+        
         <div class="item">
             <div class="item-header">
                 <span>IT Specialist</span>
@@ -170,8 +63,10 @@
                 <li>Collaborated with teams to optimize network performance and security.</li>
             </ul>
         </div>
+    </div>
 
-        <h2>Inventory (Skills & Certifications)</h2>
+    <div class="dialog-box">
+        <h2>▶ TM / HM Inventory</h2>
         <div class="skills-grid">
             <div class="skill-badge">CompTIA Security+</div>
             <div class="skill-badge">AWS Solutions Architect Associate</div>
@@ -182,8 +77,10 @@
             <div class="skill-badge">OPNsense</div>
             <div class="skill-badge">PC Hardware</div>
         </div>
+    </div>
 
-        <h2>Base Camp (Projects)</h2>
+    <div class="dialog-box">
+        <h2>▶ PC Box (Projects)</h2>
         <div class="item">
             <div class="item-header">
                 <span>Personal Homelab Environment</span>
@@ -194,7 +91,7 @@
                 <li>Deployed an OPNsense firewall for network routing and a Synology NAS for secure, centralized storage.</li>
             </ul>
         </div>
-
+        <div class="continue-arrow">▼</div>
     </div>
 
 </body>

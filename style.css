@@ -1,0 +1,132 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #e0e8f0; 
+    font-family: 'VT323', monospace;
+    color: black;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dialog-box {
+    color: black;
+    background: white;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border-radius: 25px;
+    border-image-slice: 7;
+    border-image-width: 14px;
+    border-image-repeat: round;
+    border-style: solid;
+    border-color: transparent;
+    image-rendering: pixelated;
+    border-image-source: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAVAgMAAAA/TvYGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAAxQTFRFAAAAAAAA////+Pj4EZhu1AAAAAR0Uk5TAP///7MtQIgAAABaSURBVHicY2T9zcDA+ptRUkeA4Yg6YyhrAMPq34xZ+nsYRdQYpbw/MLguY2TtLmBInc3IZnWAQfI5o+RzBgY2KxIodkuwPqgpkj4fGFyWo1ukLcBwVI0R4hYAN4IjlkoaqZsAAAAASUVORK5CYII=");
+}
+
+h1, h2 {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.trainer-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.item-sub {
+    font-size: 20px;
+    color: #555;
+    margin-top: 2px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 15px;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+li::before {
+    content: "▶"; 
+    color: black;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    background-color: #f0f0f0;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-family: 'VT323', monospace;
+}
+
+a {
+    color: #cc0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.continue-arrow {
+    text-align: right;
+    font-size: 20px;
+    animation: blink 1s step-end infinite;
+    margin-top: -10px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
