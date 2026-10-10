@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Truong | IT Infrastructure & Computer Science</title>
-    <meta name="description" content="Anthony Truong — Computer Science student at Boston University focused on IT infrastructure, networking, cloud and security. Security+ and AWS SAA certified.">
+    <title>Anthony Truong | Software, Security & Cloud</title>
+    <meta name="description" content="Anthony Truong — Computer Science student at Boston University working across software engineering, security and cloud infrastructure. Former Leidos Security Engineer Intern. Security+ and AWS SAA certified.">
     <meta name="theme-color" content="#262c44">
 
     <!-- Link previews (LinkedIn, Slack, iMessage) -->
-    <meta property="og:title" content="Anthony Truong | IT Infrastructure & Computer Science">
-    <meta property="og:description" content="BU Computer Science student · Leidos IT Infrastructure Intern · Security+ & AWS SAA certified.">
+    <meta property="og:title" content="Anthony Truong | Software, Security & Cloud">
+    <meta property="og:description" content="BU Computer Science · Leidos Security Engineer Intern · Security+ & AWS SAA certified.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://atruong24.github.io/">
 
@@ -19,16 +19,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="background.js" defer></script>
 </head>
 <body>
 
     <!-- Animated wallpaper -->
     <div class="wallpaper" aria-hidden="true">
-        <span class="blob b1"></span>
-        <span class="blob b2"></span>
-        <span class="blob b3"></span>
-        <span class="blob b4"></span>
-        <span class="blob b5"></span>
+        <canvas id="bg"></canvas>
         <span class="grain"></span>
     </div>
 
@@ -41,8 +38,6 @@
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- TODO: add resume.pdf to the repo root -->
-        <a class="btn btn-sm btn-primary" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
     </nav>
 
     <main id="top">
@@ -51,17 +46,13 @@
         <header class="hero">
             <h1 class="reveal">Anthony Truong</h1>
             <p class="lead reveal">
-                Computer Science at Boston University, building and running
-                <span class="grad-text">infrastructure, networks &amp; cloud systems</span>.
+                Computer Science at Boston University, working across
+                <span class="grad-text">software engineering, security &amp; cloud infrastructure</span>.
             </p>
 
             <div class="actions reveal">
-                <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">View résumé</a>
-                <!-- TODO: replace with the email you want recruiters to use -->
-                <a class="btn" href="mailto:YOUR-EMAIL@example.com">Get in touch</a>
                 <div class="socials">
-                    <!-- TODO: replace with your LinkedIn URL -->
-                    <a class="icon-btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <a class="icon-btn" href="https://www.linkedin.com/in/atruong24" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                     </a>
                     <a class="icon-btn" href="https://github.com/atruong24" target="_blank" rel="noopener" aria-label="GitHub">
@@ -71,10 +62,9 @@
             </div>
 
             <dl class="facts reveal">
-                <div><dt>Based in</dt><dd>Boston, MA</dd></div>
-                <div><dt>Graduating</dt><dd>Dec 2027</dd></div>
+                <div><dt>Experience</dt><dd>Leidos · BU Research</dd></div>
+                <div><dt>Graduating</dt><dd>May 2028</dd></div>
                 <div><dt>Certified</dt><dd>Security+ · AWS SAA</dd></div>
-                <div><dt>Experience</dt><dd>Leidos · BU IT</dd></div>
             </dl>
         </header>
 
@@ -83,13 +73,12 @@
             <div class="card reveal">
                 <p class="kicker">About</p>
                 <h2 id="about-h" class="sr-only">About</h2>
-                <!-- TODO: make this yours — 2–3 sentences: what you do, what you want next -->
                 <p class="about-text">
-                    I'm a Computer Science student at Boston University and a QuestBridge Scholar who likes
-                    building and running real infrastructure. I keep campus systems running as an IT Specialist
-                    at BU, I've spent two summers as an IT Infrastructure Intern at Leidos, and I run a homelab
-                    with virtualization, containers, firewalls and storage. I'm looking for roles in
-                    infrastructure, cloud, network or security engineering.
+                    I'm a Computer Science student at Boston University, a QuestBridge Scholar and a CodePath alum.
+                    At Leidos I automated vulnerability scanning across an 8,000-host environment as a Security
+                    Engineer Intern, and managed identity and access for 8,000 users as a System Administrator Intern.
+                    Now I'm building a React Native and Azure-backed field-service app as a research assistant at BU,
+                    and running a Proxmox homelab with full monitoring and a SIEM on the side.
                 </p>
             </div>
         </section>
@@ -105,33 +94,65 @@
                 <article class="card job reveal">
                     <div class="job-head">
                         <div>
-                            <h3>IT Infrastructure Intern</h3>
-                            <p class="org">Leidos</p>
+                            <h3>Undergraduate Research Assistant (Software Engineer)</h3>
+                            <p class="org">Boston University · Boston, MA</p>
                         </div>
-                        <span class="pill">Summers 2025 &amp; 2026</span>
+                        <span class="pill pill-live">Aug 2026 – Present</span>
                     </div>
-                    <!-- TODO: add specifics + numbers (how many systems/users/sites, tools used, what improved) -->
                     <ul class="bullets">
-                        <li>Helped deploy and manage enterprise IT infrastructure supporting [team / program / # users].</li>
-                        <li>Worked with engineering teams to improve network performance and security across [environment].</li>
-                        <li>Returned for a second summer with expanded responsibilities: [what changed in 2026].</li>
+                        <li>Developing a cross-platform React Native app that lets field technicians accept assigned jobs, update job status in real time and submit completion forms.</li>
+                        <li>Building a manager-facing web portal for assigning and tracking technician tasks, designing the PostgreSQL schema and backend queries behind scheduling and role-based views.</li>
+                        <li>Deploying the app's cloud infrastructure on Azure, with separate production and non-production PostgreSQL servers and a redundant database for failover.</li>
                     </ul>
-                    <div class="tags"><span>Networking</span><span>Enterprise IT</span><span>Security</span></div>
+                    <div class="tags"><span>React Native</span><span>PostgreSQL</span><span>Azure</span></div>
                 </article>
 
                 <article class="card job reveal">
                     <div class="job-head">
                         <div>
-                            <h3>IT Specialist</h3>
-                            <p class="org">Boston University</p>
+                            <h3>Security Engineer Intern</h3>
+                            <p class="org">Leidos · Boston, MA</p>
                         </div>
-                        <span class="pill pill-live">[Start] – Present</span>
+                        <span class="pill">May – Aug 2026</span>
                     </div>
                     <ul class="bullets">
-                        <li>Provide technical support and infrastructure maintenance across campus systems for [# students / faculty / staff].</li>
-                        <li>Diagnose and resolve hardware, software and network connectivity issues [e.g. ~X tickets/week].</li>
+                        <li>Eliminated manual steps in the vulnerability assessment cycle by writing Python automation for Nessus/ACAS scanning across an 8,000-host enterprise environment.</li>
+                        <li>Strengthened DISA STIG compliance across mixed Windows/Linux infrastructure by prioritizing and remediating vulnerabilities surfaced in Nessus/ACAS scans.</li>
+                        <li>Replaced a manual, error-prone SCCM certificate renewal process with an automation script.</li>
+                        <li>Built a Splunk dashboard tracking administrator login activity, giving the security team visibility into who attempted logins and when.</li>
                     </ul>
-                    <div class="tags"><span>Help Desk</span><span>Hardware</span><span>Troubleshooting</span></div>
+                    <div class="tags"><span>Python</span><span>Nessus/ACAS</span><span>DISA STIG</span><span>SCCM</span><span>Splunk</span></div>
+                </article>
+
+                <article class="card job reveal">
+                    <div class="job-head">
+                        <div>
+                            <h3>System Administrator Intern</h3>
+                            <p class="org">Leidos · New York, NY</p>
+                        </div>
+                        <span class="pill">May – Aug 2025</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Sustained 100% uptime for critical applications by writing Python and PowerShell scripts that automated end-to-end lifecycle management of 300+ SSL/TLS certificates.</li>
+                        <li>Streamlined provisioning and role-based access control for 8,000 users across 10 organizational units by administering IAM in Active Directory and Entra ID.</li>
+                        <li>Prevented 3 major enterprise outages by monitoring system health and escalating anomalies before they affected service.</li>
+                    </ul>
+                    <div class="tags"><span>PowerShell</span><span>Python</span><span>Active Directory</span><span>Entra ID</span><span>PKI</span></div>
+                </article>
+
+                <article class="card job reveal">
+                    <div class="job-head">
+                        <div>
+                            <h3>Software Engineer Intern</h3>
+                            <p class="org">24/7 Teach · New York, NY</p>
+                        </div>
+                        <span class="pill">Jan – Dec 2023</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Built responsive front-end interfaces in Python, HTML, CSS and jQuery for 300+ students, improving application fluidity.</li>
+                        <li>Cut support response time to near-instant and deflected 80% of tickets by training an AI chatbot on company data.</li>
+                    </ul>
+                    <div class="tags"><span>Python</span><span>HTML/CSS</span><span>jQuery</span><span>AI Chatbot</span></div>
                 </article>
             </div>
         </section>
@@ -144,40 +165,37 @@
             </div>
 
             <div class="project-grid">
-                <article class="card project featured reveal">
+                <article class="card project reveal">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 21h18M6 18v-6M11 18V6M16 18v-9M21 18v-4"/></svg>
+                        </span>
+                        <a class="link-arrow" href="https://github.com/JiaLiiin/CS506-Project" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <h3>Global Energy Consumption Modeling</h3>
+                    <p class="org">Machine learning · Jan – May 2026</p>
+                    <ul class="bullets">
+                        <li>Predicted nations' energy consumption per capita with R² = 0.83 using an end-to-end XGBoost pipeline on 3,885 country-year records merged from OWID and the World Bank API.</li>
+                        <li>Cut RMSE by 39% versus a linear baseline by benchmarking 6 models under a temporal train/test split designed to prevent data leakage.</li>
+                        <li>Built in a team of 5, automating the pipeline with a Makefile and running a pytest suite in GitHub Actions CI on every push.</li>
+                    </ul>
+                    <div class="tags"><span>Python</span><span>scikit-learn</span><span>XGBoost</span><span>pandas</span><span>GitHub Actions</span></div>
+                </article>
+
+                <article class="card project reveal">
                     <div class="project-top">
                         <span class="project-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7" cy="6" r=".8"/><circle cx="7" cy="14" r=".8"/><path d="M12 17v4M8 21h8"/></svg>
                         </span>
-                        <!-- TODO: link a repo or write-up (configs, network diagram, photos) -->
-                        <a class="link-arrow" href="https://github.com/atruong24" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
                     </div>
-                    <h3>Personal Homelab</h3>
-                    <p class="org">Self-hosted virtualization, networking &amp; storage</p>
+                    <h3>Homelab</h3>
+                    <p class="org">Self-hosted infrastructure &amp; DevOps · Aug 2023 – Present</p>
                     <ul class="bullets">
-                        <li>Designed and built a home server rack running Proxmox to virtualize [#] VMs and containers.</li>
-                        <li>Containerized services with Docker, including dedicated game servers for [#] players.</li>
-                        <li>Deployed an OPNsense firewall for routing and [VLAN segmentation / VPN / IDS], plus a Synology NAS for centralized, backed-up storage.</li>
+                        <li>Architected a 2-node Proxmox cluster running 4 VMs and 7 containers, deploying services declaratively with Docker Compose behind an OPNsense firewall and Nginx reverse proxy.</li>
+                        <li>Automated monitoring and alerting with Prometheus, InfluxDB, Grafana and Uptime Kuma, and centralized threat detection with Wazuh SIEM.</li>
                     </ul>
-                    <div class="tags"><span>Proxmox</span><span>Docker</span><span>OPNsense</span><span>Synology</span><span>Linux</span></div>
+                    <div class="tags"><span>Proxmox</span><span>Docker Compose</span><span>OPNsense</span><span>Nginx</span><span>Grafana</span><span>Wazuh</span></div>
                 </article>
-
-                <!-- TODO: add 1–2 more projects. Copy this block: -->
-                <!--
-                <article class="card project reveal">
-                    <div class="project-top">
-                        <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span>
-                        <a class="link-arrow" href="#" target="_blank" rel="noopener">View <span aria-hidden="true">↗</span></a>
-                    </div>
-                    <h3>Project Name</h3>
-                    <p class="org">One-line description</p>
-                    <ul class="bullets">
-                        <li>What you built and why.</li>
-                        <li>A result or number.</li>
-                    </ul>
-                    <div class="tags"><span>Tech</span></div>
-                </article>
-                -->
             </div>
         </section>
 
@@ -192,45 +210,36 @@
                 <div class="card cert reveal">
                     <span class="cert-badge" aria-hidden="true">✓</span>
                     <div>
-                        <h3>CompTIA Security+</h3>
-                        <p class="org">Certified</p>
+                        <h3>AWS Solutions Architect – Associate</h3>
+                        <p class="org">Dec 2024</p>
                     </div>
                 </div>
                 <div class="card cert reveal">
                     <span class="cert-badge" aria-hidden="true">✓</span>
                     <div>
-                        <h3>AWS Solutions Architect – Associate</h3>
-                        <p class="org">Certified</p>
-                    </div>
-                </div>
-                <div class="card cert cert-progress reveal">
-                    <span class="cert-badge" aria-hidden="true">◔</span>
-                    <div>
-                        <h3>Cisco CCNA</h3>
-                        <!-- TODO: add target date -->
-                        <p class="org">In progress</p>
+                        <h3>CompTIA Security+</h3>
+                        <p class="org">Jul 2023</p>
                     </div>
                 </div>
             </div>
 
             <div class="card skills reveal">
                 <div class="skill-group">
-                    <h3>Infrastructure &amp; Networking</h3>
+                    <h3>Languages</h3>
                     <div class="chips">
-                        <span>Proxmox</span><span>OPNsense</span><span>Synology NAS</span><span>TCP/IP &amp; Routing</span><span>PC Hardware</span>
+                        <span>Python</span><span>Java</span><span>JavaScript</span><span>SQL</span><span>Bash</span><span>PowerShell</span><span>HTML/CSS</span><span>YAML</span>
                     </div>
                 </div>
                 <div class="skill-group">
-                    <h3>Cloud &amp; DevOps</h3>
+                    <h3>Libraries &amp; Tools</h3>
                     <div class="chips">
-                        <span>AWS</span><span>Docker</span><span>Linux</span>
+                        <span>React Native</span><span>PostgreSQL</span><span>pandas</span><span>NumPy</span><span>XGBoost</span><span>pytest</span><span>Git</span><span>GitHub Actions</span><span>Docker</span><span>Linux</span><span>Nginx</span>
                     </div>
                 </div>
-                <!-- TODO: only list languages you can talk about in an interview -->
                 <div class="skill-group">
-                    <h3>Programming</h3>
+                    <h3>Cloud &amp; Security</h3>
                     <div class="chips">
-                        <span>Python</span><span>Java</span><span>Bash</span>
+                        <span>AWS (EC2, S3, IAM)</span><span>Azure</span><span>Entra ID</span><span>Active Directory</span><span>Proxmox</span><span>Nessus/ACAS</span><span>Splunk</span><span>Wazuh SIEM</span>
                     </div>
                 </div>
             </div>
@@ -245,41 +254,40 @@
             <div class="card job reveal">
                 <div class="job-head">
                     <div>
-                        <h3>B.S. in Computer Science</h3>
+                        <h3>B.A. in Computer Science</h3>
                         <p class="org">Boston, MA</p>
                     </div>
-                    <span class="pill">Expected Dec 2027</span>
+                    <span class="pill">May 2028</span>
                 </div>
                 <div class="tags honors">
-                    <span>QuestBridge Scholar</span>
+                    <span>QuestBridge National College Match Scholar</span>
+                    <span>CodePath Alumni</span>
+                    <!-- Not on the latest résumé — remove if it no longer applies -->
                     <span>Dean's List</span>
-                    <!-- TODO: optional — relevant courses, e.g. <span>Computer Networks</span> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CONTACT ===== -->
-        <section class="section" id="contact" aria-labelledby="contact-h">
-            <div class="card cta reveal">
-                <p class="kicker">Contact</p>
-                <h2 id="contact-h">Let's talk.</h2>
-                <p class="about-text">I'm happy to chat about internships, new-grad roles or anything infrastructure. Email is the fastest way to reach me.</p>
-                <div class="actions center">
-                    <a class="btn btn-primary" href="mailto:YOUR-EMAIL@example.com">Email me</a>
-                    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-                    <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
+        <h2 class="sr-only">Contact</h2>
+        <div class="contact-icons">
+            <a class="icon-btn icon-lg" href="mailto:atruong2424@gmail.com" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.3-.5L12 11.1 19.7 5H4.3zM20 6.6l-7.4 5.9a1 1 0 0 1-1.2 0L4 6.6V18.5c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V6.6z"/></svg>
+            </a>
+            <a class="icon-btn icon-lg" href="https://www.linkedin.com/in/atruong24" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a class="icon-btn icon-lg" href="https://github.com/atruong24" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>
+            </a>
+        </div>
         <p>© 2026 Anthony Truong · Last updated Oct 2026</p>
     </footer>
 
     <script>
-        // Fade sections in as they scroll into view
+        // Fade sections in just before they scroll into view
         (function () {
             var els = document.querySelectorAll('.reveal');
             if (!('IntersectionObserver' in window)) {
@@ -290,7 +298,7 @@
                 entries.forEach(function (e) {
                     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0, rootMargin: '0px 0px 100px 0px' });
             els.forEach(function (el) { io.observe(el); });
 
             // Shadow on the nav once you scroll

@@ -15,7 +15,6 @@
     --muted: #98a1bd;
 
     --glass: rgba(34, 40, 64, 0.55);
-    --glass-strong: rgba(34, 40, 64, 0.78);
     --glass-border: rgba(255, 255, 255, 0.12);
     --chip: rgba(255, 255, 255, 0.08);
     --surface: rgba(255, 255, 255, 0.08);
@@ -49,8 +48,7 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-a:focus-visible,
-.btn:focus-visible {
+a:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 999px;
@@ -79,69 +77,14 @@ a:focus-visible,
         var(--base);
 }
 
-.blob {
+/* Drawn by background.js at ~200px wide and stretched to fill the screen;
+   the browser's smooth upscaling does the blurring for free */
+#bg {
     position: absolute;
-    width: 70vmax;
-    height: 70vmax;
-    border-radius: 50%;
-    opacity: 0.7;
-    will-change: transform;
-    /* No filter: blur() here — the gradients are already soft, and a live blur
-       on screen-sized moving layers is the main cause of scroll jank */
-}
-
-.b1 {
-    background: radial-gradient(circle at 50% 50%, var(--periwinkle) 0%, transparent 70%);
-    top: -30vmax; left: -20vmax;
-    animation: drift1 70s ease-in-out infinite alternate;
-}
-.b2 {
-    background: radial-gradient(circle at 50% 50%, var(--rose) 0%, transparent 70%);
-    top: -10vmax; right: -30vmax;
-    animation: drift2 85s ease-in-out infinite alternate;
-}
-.b3 {
-    background: radial-gradient(circle at 50% 50%, var(--sage) 0%, transparent 70%);
-    bottom: -35vmax; left: -10vmax;
-    animation: drift3 95s ease-in-out infinite alternate;
-}
-.b4 {
-    background: radial-gradient(circle at 50% 50%, var(--lavender) 0%, transparent 70%);
-    bottom: -25vmax; right: -20vmax;
-    animation: drift4 80s ease-in-out infinite alternate;
-}
-.b5 {
-    width: 50vmax; height: 50vmax;
-    background: radial-gradient(circle at 50% 50%, var(--peach) 0%, transparent 70%);
-    top: 25%; left: 30%;
-    opacity: 0.55;
-    animation: drift5 110s ease-in-out infinite alternate;
-}
-
-@keyframes drift1 {
-    0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
-    50%  { transform: translate(18vw, 14vh) scale(1.15) rotate(20deg); }
-    100% { transform: translate(8vw, 30vh) scale(0.95) rotate(-10deg); }
-}
-@keyframes drift2 {
-    0%   { transform: translate(0, 0) scale(1); }
-    50%  { transform: translate(-22vw, 18vh) scale(1.1); }
-    100% { transform: translate(-10vw, 38vh) scale(1.2); }
-}
-@keyframes drift3 {
-    0%   { transform: translate(0, 0) scale(1.1); }
-    50%  { transform: translate(25vw, -20vh) scale(0.95); }
-    100% { transform: translate(40vw, -8vh) scale(1.15); }
-}
-@keyframes drift4 {
-    0%   { transform: translate(0, 0) scale(1); }
-    50%  { transform: translate(-18vw, -25vh) scale(1.2); }
-    100% { transform: translate(-35vw, -10vh) scale(1); }
-}
-@keyframes drift5 {
-    0%   { transform: translate(-10vw, -10vh) scale(0.9); }
-    50%  { transform: translate(15vw, 10vh) scale(1.15); }
-    100% { transform: translate(-5vw, 20vh) scale(1); }
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* Fine film grain, like the macOS wallpapers */
@@ -167,15 +110,13 @@ a:focus-visible,
     gap: 16px;
     padding: 8px 8px 8px 16px;
     border-radius: 999px;
-    background: var(--glass);
+    background: rgba(34, 40, 64, 0.82);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
     transition: box-shadow 0.3s, background 0.3s;
 }
 
 .nav.scrolled {
-    background: var(--glass-strong);
+    background: rgba(34, 40, 64, 0.92);
     box-shadow: var(--shadow);
 }
 
@@ -344,42 +285,6 @@ h3 {
 
 .actions.center { justify-content: center; }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 15.5px;
-    font-weight: 600;
-    padding: 12px 22px;
-    border-radius: 999px;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid var(--surface-border);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-    background: var(--surface-hover);
-    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.5);
-}
-
-.btn-primary {
-    color: #fff;
-    background: linear-gradient(135deg, #5164c8, #7357c2);
-    border-color: transparent;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #5a6ed6, #7d62cc);
-}
-
-.btn-sm {
-    font-size: 14px;
-    padding: 8px 16px;
-}
-
 .socials { display: flex; gap: 8px; }
 
 .icon-btn {
@@ -405,12 +310,14 @@ h3 {
 /* ================= Hero ================= */
 
 .hero {
-    min-height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 0 48px;
+    padding: 140px 0 0;
 }
+
+/* Keep About close to the fact tiles above it */
+#about { padding-top: 24px; }
 
 .hero h1 {
     font-size: clamp(46px, 9vw, 92px);
@@ -438,7 +345,7 @@ h3 {
 
 .facts {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
     margin: 56px 0 0;
 }
@@ -539,7 +446,7 @@ h3 {
 
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin-bottom: 16px;
 }
@@ -596,31 +503,38 @@ h3 {
 
 /* ================= Contact ================= */
 
-.cta {
-    text-align: center;
-    padding: 56px 28px;
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }
 
-.cta h2 { margin-bottom: 12px; }
-
-.cta .about-text {
-    max-width: 520px;
-    margin: 0 auto 28px;
+.icon-lg {
+    width: 48px;
+    height: 48px;
 }
+
+.icon-lg svg { width: 20px; height: 20px; }
 
 .footer {
+    width: min(960px, calc(100% - 32px));
+    margin: 24px auto 0;
+    padding: 28px 0 36px;
+    border-top: 1px solid var(--glass-border);
     text-align: center;
-    padding: 24px 16px 40px;
     font-size: 14px;
     color: var(--muted);
+    scroll-margin-top: 80px;
 }
+
+.footer p { margin: 16px 0 0; }
 
 /* ================= Reveal on scroll ================= */
 
 .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.8s cubic-bezier(.2, .7, .2, 1), transform 0.8s cubic-bezier(.2, .7, .2, 1);
+    transform: translateY(8px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .reveal.in {
@@ -628,36 +542,36 @@ h3 {
     transform: none;
 }
 
-.hero .reveal:nth-child(2) { transition-delay: 0.08s; }
-.hero .reveal:nth-child(3) { transition-delay: 0.16s; }
-.hero .reveal:nth-child(4) { transition-delay: 0.24s; }
-.hero .reveal:nth-child(5) { transition-delay: 0.32s; }
+.hero .reveal:nth-child(2) { transition-delay: 0.04s; }
+.hero .reveal:nth-child(3) { transition-delay: 0.08s; }
+.hero .reveal:nth-child(4) { transition-delay: 0.12s; }
 
 /* ================= Responsive ================= */
 
 @media (max-width: 820px) {
-    .nav-links { display: none; }
-    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cert-grid, .skills { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {
     body { font-size: 16px; }
+    .logo { display: none; }
+    .nav { justify-content: center; padding: 6px; }
+    .nav-links { gap: 0; }
+    .nav-links a { font-size: 13px; padding: 6px 8px; }
     .card { padding: 22px 20px; }
-    .hero { padding-top: 104px; min-height: auto; }
-    .facts { margin-top: 40px; }
+    .hero { padding-top: 104px; }
+    .facts { margin-top: 40px; grid-template-columns: 1fr; }
     .job-head { flex-direction: column; }
+}
+
+@media (max-width: 360px) {
+    .nav { width: calc(100% - 16px); padding: 6px 4px; }
+    .nav-links a { font-size: 12px; padding: 6px 5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .blob { animation: none; }
     .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-/* Browsers without backdrop blur: make glass more opaque so text stays readable */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .nav { background: rgba(34, 40, 64, 0.92); }
 }
 
 @media print {
