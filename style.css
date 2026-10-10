@@ -3,18 +3,18 @@
 :root {
     /* Dusk palette: deep slate-indigo, never black; soft light text */
     color-scheme: dark;
-    --base: #262c44;
-    --periwinkle: #4f5fb0;
-    --rose: #8c4a6c;
-    --sage: #2d7a77;
-    --lavender: #6a4f9e;
-    --peach: #a07148;
+    --base: #1a1f31;
+    --periwinkle: #3c4788;
+    --rose: #6b3853;
+    --sage: #215c5a;
+    --lavender: #503c78;
+    --peach: #795436;
 
     --ink: #eef1f8;
     --ink-2: #c6cce0;
     --muted: #98a1bd;
 
-    --glass: rgba(34, 40, 64, 0.55);
+    --glass: rgba(25, 29, 48, 0.6);
     --glass-border: rgba(255, 255, 255, 0.12);
     --chip: rgba(255, 255, 255, 0.08);
     --surface: rgba(255, 255, 255, 0.08);
@@ -72,8 +72,8 @@ a:focus-visible {
     contain: strict;
     pointer-events: none;
     background:
-        radial-gradient(120% 90% at 10% 0%, #323a5c 0%, transparent 60%),
-        radial-gradient(100% 80% at 100% 100%, #352f52 0%, transparent 55%),
+        radial-gradient(120% 90% at 10% 0%, #252b46 0%, transparent 60%),
+        radial-gradient(100% 80% at 100% 100%, #28233e 0%, transparent 55%),
         var(--base);
 }
 
