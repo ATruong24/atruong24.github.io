@@ -3,96 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Truong | Trainer Card</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    
+    <title>Anthony Truong | IT Infrastructure & Computer Science</title>
+    <meta name="description" content="Anthony Truong — Computer Science student at Boston University focused on IT infrastructure, networking, cloud and security. Security+ and AWS SAA certified.">
+    <meta name="theme-color" content="#262c44">
+
+    <!-- Link previews (LinkedIn, Slack, iMessage) -->
+    <meta property="og:title" content="Anthony Truong | IT Infrastructure & Computer Science">
+    <meta property="og:description" content="BU Computer Science student · Leidos IT Infrastructure Intern · Security+ & AWS SAA certified.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atruong24.github.io/">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%237f93d9'/><stop offset='1' stop-color='%23d79aa6'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='url(%23g)'/><text x='32' y='42' font-family='Helvetica,Arial' font-size='26' font-weight='700' fill='white' text-anchor='middle'>AT</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="dialog-box">
-        <h1>Trainer Card</h1>
-        <div class="trainer-info">
-            <span><strong>Name:</strong> Anthony Truong</span>
-            <span><strong>Class:</strong> IT & CS</span>
-        </div>
-        <div class="trainer-info">
-            <span><strong>Base:</strong> Boston, MA</span>
-            <span><strong>Level:</strong> Junior</span>
-        </div>
+    <!-- Animated wallpaper -->
+    <div class="wallpaper" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+        <span class="blob b4"></span>
+        <span class="blob b5"></span>
+        <span class="grain"></span>
     </div>
 
-    <div class="dialog-box">
-        <h2>▶ Education Stats</h2>
-        <div class="item">
-            <div class="item-header">
-                <span>Boston University</span>
-                <span>Exp. Dec 2027</span>
+    <nav class="nav" aria-label="Main">
+        <a class="logo" href="#top" aria-label="Back to top">AT</a>
+        <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <!-- TODO: add resume.pdf to the repo root -->
+        <a class="btn btn-sm btn-primary" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </nav>
+
+    <main id="top">
+
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <h1 class="reveal">Anthony Truong</h1>
+            <p class="lead reveal">
+                Computer Science at Boston University, building and running
+                <span class="grad-text">infrastructure, networks &amp; cloud systems</span>.
+            </p>
+
+            <div class="actions reveal">
+                <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">View résumé</a>
+                <!-- TODO: replace with the email you want recruiters to use -->
+                <a class="btn" href="mailto:YOUR-EMAIL@example.com">Get in touch</a>
+                <div class="socials">
+                    <!-- TODO: replace with your LinkedIn URL -->
+                    <a class="icon-btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    </a>
+                    <a class="icon-btn" href="https://github.com/atruong24" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="item-sub">B.S. in Computer Science</div>
-            <ul>
-                <li>QuestBridge Scholar</li>
-                <li>Dean's List</li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="dialog-box">
-        <h2>▶ Battle Experience</h2>
-        
-        <div class="item">
-            <div class="item-header">
-                <span>IT Specialist</span>
-                <span>Current</span>
+            <dl class="facts reveal">
+                <div><dt>Based in</dt><dd>Boston, MA</dd></div>
+                <div><dt>Graduating</dt><dd>Dec 2027</dd></div>
+                <div><dt>Certified</dt><dd>Security+ · AWS SAA</dd></div>
+                <div><dt>Experience</dt><dd>Leidos · BU IT</dd></div>
+            </dl>
+        </header>
+
+        <!-- ===== ABOUT ===== -->
+        <section class="section" id="about" aria-labelledby="about-h">
+            <div class="card reveal">
+                <p class="kicker">About</p>
+                <h2 id="about-h" class="sr-only">About</h2>
+                <!-- TODO: make this yours — 2–3 sentences: what you do, what you want next -->
+                <p class="about-text">
+                    I'm a Computer Science student at Boston University and a QuestBridge Scholar who likes
+                    building and running real infrastructure. I keep campus systems running as an IT Specialist
+                    at BU, I've spent two summers as an IT Infrastructure Intern at Leidos, and I run a homelab
+                    with virtualization, containers, firewalls and storage. I'm looking for roles in
+                    infrastructure, cloud, network or security engineering.
+                </p>
             </div>
-            <div class="item-sub">Boston University</div>
-            <ul>
-                <li>Provide technical support and infrastructure maintenance across campus systems.</li>
-                <li>Troubleshoot hardware and network connectivity issues.</li>
-            </ul>
-        </div>
+        </section>
 
-        <div class="item">
-            <div class="item-header">
-                <span>IT Infrastructure Intern</span>
-                <span>Summer 2025 (Returning 2026)</span>
+        <!-- ===== EXPERIENCE ===== -->
+        <section class="section" id="experience" aria-labelledby="exp-h">
+            <div class="section-head reveal">
+                <p class="kicker">Experience</p>
+                <h2 id="exp-h">Where I've worked</h2>
             </div>
-            <div class="item-sub">Leidos</div>
-            <ul>
-                <li>Assisted in deploying and managing enterprise-level IT infrastructure.</li>
-                <li>Collaborated with teams to optimize network performance and security.</li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="dialog-box">
-        <h2>▶ TM / HM Inventory</h2>
-        <div class="skills-grid">
-            <div class="skill-badge">CompTIA Security+</div>
-            <div class="skill-badge">AWS Solutions Architect Associate</div>
-            <div class="skill-badge">CCNA (In Progress)</div>
-            <div class="skill-badge">Proxmox</div>
-            <div class="skill-badge">Docker</div>
-            <div class="skill-badge">Synology NAS</div>
-            <div class="skill-badge">OPNsense</div>
-            <div class="skill-badge">PC Hardware</div>
-        </div>
-    </div>
+            <div class="timeline">
+                <article class="card job reveal">
+                    <div class="job-head">
+                        <div>
+                            <h3>IT Infrastructure Intern</h3>
+                            <p class="org">Leidos</p>
+                        </div>
+                        <span class="pill">Summers 2025 &amp; 2026</span>
+                    </div>
+                    <!-- TODO: add specifics + numbers (how many systems/users/sites, tools used, what improved) -->
+                    <ul class="bullets">
+                        <li>Helped deploy and manage enterprise IT infrastructure supporting [team / program / # users].</li>
+                        <li>Worked with engineering teams to improve network performance and security across [environment].</li>
+                        <li>Returned for a second summer with expanded responsibilities: [what changed in 2026].</li>
+                    </ul>
+                    <div class="tags"><span>Networking</span><span>Enterprise IT</span><span>Security</span></div>
+                </article>
 
-    <div class="dialog-box">
-        <h2>▶ PC Box (Projects)</h2>
-        <div class="item">
-            <div class="item-header">
-                <span>Personal Homelab Environment</span>
+                <article class="card job reveal">
+                    <div class="job-head">
+                        <div>
+                            <h3>IT Specialist</h3>
+                            <p class="org">Boston University</p>
+                        </div>
+                        <span class="pill pill-live">[Start] – Present</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Provide technical support and infrastructure maintenance across campus systems for [# students / faculty / staff].</li>
+                        <li>Diagnose and resolve hardware, software and network connectivity issues [e.g. ~X tickets/week].</li>
+                    </ul>
+                    <div class="tags"><span>Help Desk</span><span>Hardware</span><span>Troubleshooting</span></div>
+                </article>
             </div>
-            <ul>
-                <li>Architected a robust home server rack utilizing Proxmox for virtualization.</li>
-                <li>Containerized services using Docker to efficiently host dedicated game servers.</li>
-                <li>Deployed an OPNsense firewall for network routing and a Synology NAS for secure, centralized storage.</li>
-            </ul>
-        </div>
-        <div class="continue-arrow">▼</div>
-    </div>
+        </section>
 
+        <!-- ===== PROJECTS ===== -->
+        <section class="section" id="projects" aria-labelledby="proj-h">
+            <div class="section-head reveal">
+                <p class="kicker">Projects</p>
+                <h2 id="proj-h">Things I've built</h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="card project featured reveal">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="6" rx="1.5"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><circle cx="7" cy="6" r=".8"/><circle cx="7" cy="14" r=".8"/><path d="M12 17v4M8 21h8"/></svg>
+                        </span>
+                        <!-- TODO: link a repo or write-up (configs, network diagram, photos) -->
+                        <a class="link-arrow" href="https://github.com/atruong24" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <h3>Personal Homelab</h3>
+                    <p class="org">Self-hosted virtualization, networking &amp; storage</p>
+                    <ul class="bullets">
+                        <li>Designed and built a home server rack running Proxmox to virtualize [#] VMs and containers.</li>
+                        <li>Containerized services with Docker, including dedicated game servers for [#] players.</li>
+                        <li>Deployed an OPNsense firewall for routing and [VLAN segmentation / VPN / IDS], plus a Synology NAS for centralized, backed-up storage.</li>
+                    </ul>
+                    <div class="tags"><span>Proxmox</span><span>Docker</span><span>OPNsense</span><span>Synology</span><span>Linux</span></div>
+                </article>
+
+                <!-- TODO: add 1–2 more projects. Copy this block: -->
+                <!--
+                <article class="card project reveal">
+                    <div class="project-top">
+                        <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span>
+                        <a class="link-arrow" href="#" target="_blank" rel="noopener">View <span aria-hidden="true">↗</span></a>
+                    </div>
+                    <h3>Project Name</h3>
+                    <p class="org">One-line description</p>
+                    <ul class="bullets">
+                        <li>What you built and why.</li>
+                        <li>A result or number.</li>
+                    </ul>
+                    <div class="tags"><span>Tech</span></div>
+                </article>
+                -->
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section class="section" id="skills" aria-labelledby="skills-h">
+            <div class="section-head reveal">
+                <p class="kicker">Skills</p>
+                <h2 id="skills-h">Certifications &amp; tools</h2>
+            </div>
+
+            <div class="cert-grid">
+                <div class="card cert reveal">
+                    <span class="cert-badge" aria-hidden="true">✓</span>
+                    <div>
+                        <h3>CompTIA Security+</h3>
+                        <p class="org">Certified</p>
+                    </div>
+                </div>
+                <div class="card cert reveal">
+                    <span class="cert-badge" aria-hidden="true">✓</span>
+                    <div>
+                        <h3>AWS Solutions Architect – Associate</h3>
+                        <p class="org">Certified</p>
+                    </div>
+                </div>
+                <div class="card cert cert-progress reveal">
+                    <span class="cert-badge" aria-hidden="true">◔</span>
+                    <div>
+                        <h3>Cisco CCNA</h3>
+                        <!-- TODO: add target date -->
+                        <p class="org">In progress</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card skills reveal">
+                <div class="skill-group">
+                    <h3>Infrastructure &amp; Networking</h3>
+                    <div class="chips">
+                        <span>Proxmox</span><span>OPNsense</span><span>Synology NAS</span><span>TCP/IP &amp; Routing</span><span>PC Hardware</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <div class="chips">
+                        <span>AWS</span><span>Docker</span><span>Linux</span>
+                    </div>
+                </div>
+                <!-- TODO: only list languages you can talk about in an interview -->
+                <div class="skill-group">
+                    <h3>Programming</h3>
+                    <div class="chips">
+                        <span>Python</span><span>Java</span><span>Bash</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section class="section" id="education" aria-labelledby="edu-h">
+            <div class="section-head reveal">
+                <p class="kicker">Education</p>
+                <h2 id="edu-h">Boston University</h2>
+            </div>
+            <div class="card job reveal">
+                <div class="job-head">
+                    <div>
+                        <h3>B.S. in Computer Science</h3>
+                        <p class="org">Boston, MA</p>
+                    </div>
+                    <span class="pill">Expected Dec 2027</span>
+                </div>
+                <div class="tags honors">
+                    <span>QuestBridge Scholar</span>
+                    <span>Dean's List</span>
+                    <!-- TODO: optional — relevant courses, e.g. <span>Computer Networks</span> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="section" id="contact" aria-labelledby="contact-h">
+            <div class="card cta reveal">
+                <p class="kicker">Contact</p>
+                <h2 id="contact-h">Let's talk.</h2>
+                <p class="about-text">I'm happy to chat about internships, new-grad roles or anything infrastructure. Email is the fastest way to reach me.</p>
+                <div class="actions center">
+                    <a class="btn btn-primary" href="mailto:YOUR-EMAIL@example.com">Email me</a>
+                    <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Anthony Truong · Last updated Oct 2026</p>
+    </footer>
+
+    <script>
+        // Fade sections in as they scroll into view
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (el) { el.classList.add('in'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (el) { io.observe(el); });
+
+            // Shadow on the nav once you scroll
+            var nav = document.querySelector('.nav');
+            var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
 </body>
 </html>
